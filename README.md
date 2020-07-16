@@ -1,19 +1,14 @@
-# task
+# 项目说明
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 开发环境
+- 系统：Win10
+- Node: v12.18.2
+- NPM: 6.14.6
+- vue: 4.4.6
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 所使用技术栈
+- Vue.js
+- Vue-Router
+- Vuex
+- Element-UI
