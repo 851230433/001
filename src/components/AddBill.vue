@@ -89,7 +89,6 @@
 
           this.$store.commit('addBill', this.addBill)
           this.$alert('添加成功！')
-          
           this.$router.push('/')
         }else{
           this.$alert('账单信息不完整!')

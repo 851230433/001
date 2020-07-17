@@ -93,6 +93,11 @@ export default {
 
     changeDateF() {
       this.list = [...this.data]
+      this.list.sort( (a, b) => {
+        let x = a.time
+        let y = b.time
+        return y - x
+      } )
       this.list.forEach(item => {
         let time = new Date(+item.time)
         time.setHours(time.getHours(), time.getMinutes() - time.getTimezoneOffset())
@@ -125,13 +130,8 @@ export default {
       this.showList = JSON.parse( JSON.stringify(this.list2) )
       this.showList.forEach(item => {
         let date = new Date(item.time)
-        const month = date.getMonth() + 1<10? "0"+(date.getMonth() + 1):date.getMonth() + 1
-        const strDate = date.getDate()<10? "0" + date.getDate():date.getDate()
-        const hour = date.getHours()<10? "0" + date.getHours():date.getHours()
-        const minutes = date.getMinutes()<10? "0" + date.getMinutes():date.getMinutes()
-        const second = date.getSeconds()<10? "0" + date.getSeconds():date.getSeconds()
-        const time = date.getFullYear() + '-'  + month  + '-'  + strDate
-                          + " "  + hour  + ':'  + minutes + ':' + second
+        let time = date.getFullYear() + '-' + this.checkTimeF(date.getMonth() + 1) + '-' + this.checkTimeF(date.getDate())
+                   + ' ' + this.checkTimeF(date.getHours()) + ':' + this.checkTimeF(date.getMinutes()) + ':' + this.checkTimeF(date.getSeconds())
 
         item.time = time
 
@@ -151,6 +151,13 @@ export default {
       })
       this.currentPage = 1
       this.getCurrentPageData(this.currentPage)
+    },
+
+    checkTimeF(date) {
+      if(date < 10) {
+        date = '0' + date
+      }
+      return date
     },
 
     getOptions() {

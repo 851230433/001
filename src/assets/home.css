@@ -41,15 +41,6 @@ footer {
   margin-top: 10px;
   position: relative;
 }
-/* .dark {
-  font-size: 30px;
-  position: absolute;
-  top: 55px;
-  left: 35px;
-}
-.dark:hover {
-  cursor: pointer;
-} */
 footer>section {
   width: 200px;
   position: absolute;
